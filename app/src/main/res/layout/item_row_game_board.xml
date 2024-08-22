@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/dimen16dp"
+    android:orientation="vertical">
+
+   <LinearLayout
+       android:orientation="horizontal"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content">
+
+       <androidx.cardview.widget.CardView
+           android:layout_width="@dimen/dimen110dp"
+           android:layout_height="@dimen/dimen74dp"
+           android:layout_gravity="center_vertical"
+           app:cardCornerRadius="@dimen/dimen15dp"
+           app:cardBackgroundColor="@android:color/white">
+
+           <ImageView
+               android:id="@+id/ivImage"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:src="@drawable/img_2"
+               android:scaleType="centerCrop"
+               />
+
+       </androidx.cardview.widget.CardView>
+
+       <LinearLayout
+           android:id="@+id/llInfo"
+           android:orientation="vertical"
+           android:paddingStart="@dimen/dimen20dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <TextView
+               android:id="@+id/tvTitle"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:textFontWeight="500"
+               android:textSize="@dimen/text_size_16"
+               android:lineHeight="@dimen/dimen22dp"
+               android:textColor="@color/text_white"
+               android:text="Diablo Immortal"/>
+
+               <androidx.recyclerview.widget.RecyclerView
+                   android:id="@+id/rvTagCategory"
+                   android:clickable="false"
+                   app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                   android:orientation="horizontal"
+                   tools:itemCount="20"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content" />
+           <RelativeLayout
+               android:orientation="horizontal"
+               android:layout_width="wrap_content"
+               android:layout_height="@dimen/dimen30dp">
+               <RelativeLayout
+                   android:gravity="bottom"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent" >
+                   <me.zhanghai.android.materialratingbar.MaterialRatingBar
+                       android:id="@+id/rBar"
+                       android:layout_width="@dimen/dimen100dp"
+                       android:layout_height="wrap_content"
+                       android:padding="@dimen/dimen6dp"
+                       app:mrb_fillBackgroundStars="false"
+                       app:mrb_progressTint="@color/white"
+                       app:mrb_progressBackgroundTint="@color/white"
+                       app:mrb_secondaryProgressTint="@color/white"
+                       android:numStars="5"
+                       android:stepSize="0.5"
+                       android:isIndicator="true"
+                       style="@style/Widget.MaterialRatingBar.RatingBar" />
+               </RelativeLayout >
+               <TextView
+                   android:id="@+id/tvItemSize"
+                   android:layout_toStartOf="@+id/lnl_download"
+                   android:gravity="bottom"
+                   android:layout_width="wrap_content"
+                   android:layout_height="match_parent"
+                   android:text="-20%"
+                   android:textSize="@dimen/text_size_10"
+                   android:textColor="@color/text_gray_400"/>
+              <LinearLayout
+                  android:id="@+id/lnl_download"
+                  android:layout_alignParentEnd="true"
+                  android:gravity="bottom"
+                  android:layout_width="wrap_content"
+                  android:layout_height="match_parent">
+                 <LinearLayout
+                     android:layout_marginHorizontal="@dimen/dimen3dp"
+                     android:layout_marginBottom="@dimen/dimen2dp"
+                     android:layout_width="@dimen/dimen10dp"
+                     android:layout_height="@dimen/padding10">
+                     <ImageView
+                         android:layout_gravity="bottom"
+                         android:src="@drawable/ic_download"
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"
+                         app:tint="@color/tint_white" />
+                 </LinearLayout>
+                  <TextView
+                      android:id="@+id/tvNumberDownload"
+                      android:gravity="bottom"
+                      android:layout_width="wrap_content"
+                      android:layout_height="match_parent"
+                      android:text="-20%"
+                      android:textSize="@dimen/text_size_10"
+                      android:textColor="@color/text_white">
+                  </TextView>
+              </LinearLayout>
+           </RelativeLayout>
+       </LinearLayout>
+
+   </LinearLayout>
+</RelativeLayout>

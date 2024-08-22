@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:state_selected="true"   android:state_pressed="true" >
+        <shape android:shape="rectangle"  >
+            <corners android:radius="@dimen/dimen10dp" />
+            <stroke
+                android:width="@dimen/dimen5dp"
+                android:color="@color/bg_bottom_navigation" />
+            <gradient android:angle="0" android:startColor="@color/stroke_green_start"
+                android:endColor="@color/stroke_green_end"  />
+        </shape>
+    </item>
+    <item android:state_selected="true"   android:state_pressed="false" >
+        <shape android:shape="rectangle"  >
+            <stroke
+                android:width="@dimen/dimen5dp"
+                android:color="@color/bg_bottom_navigation" />
+            <corners android:radius="@dimen/dimen10dp" />
+            <gradient android:angle="0" android:startColor="@color/stroke_green_start"
+                android:endColor="@color/stroke_green_end"  />
+        </shape>
+    </item>
+    <item android:state_selected="false" android:state_pressed="true">
+        <shape android:shape="rectangle"  >
+            <stroke
+                android:width="@dimen/dimen5dp"
+                android:color="@color/bg_bottom_navigation" />
+            <corners android:radius="@dimen/dimen10dp" />
+            <solid android:color="@color/bg_bottom_navigation"/>
+        </shape>
+    </item>
+    <item android:state_selected="false" android:state_pressed="false">
+        <shape android:shape="rectangle"  >
+            <stroke
+                android:width="@dimen/dimen5dp"
+                android:color="@color/bg_bottom_navigation" />
+            <corners android:radius="@dimen/dimen10dp"/>
+            <solid android:color="@color/bg_bottom_navigation"/>
+        </shape>
+    </item>
+</selector>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "644991801513",
+    "project_id": "pools-app-store",
+    "storage_bucket": "pools-app-store.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:644991801513:android:3ef44d66f571ce4ce771b8",
+        "android_client_info": {
+          "package_name": "com.pools.store"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC18blgc2muaMK1LbcUXMlgckyB7p_K3pM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:644991801513:android:0464d4160902259de771b8",
+        "android_client_info": {
+          "package_name": "com.text.sdsd"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC18blgc2muaMK1LbcUXMlgckyB7p_K3pM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

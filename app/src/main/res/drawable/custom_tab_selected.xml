@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <!-- create gradient you want to use with the angle you want to use -->
+        <shape android:shape="rectangle" >
+            <gradient
+                android:angle="0"
+                android:endColor="@color/stroke_green_end"
+                android:startColor="@color/stroke_green_start" />
+            <corners android:radius="@dimen/dimen8dp" />
+        </shape>
+    </item>
+    <item
+        android:top="@dimen/dimen1dp"
+        android:bottom="@dimen/dimen1dp"
+        android:left="@dimen/dimen1dp"
+        android:right="@dimen/dimen1dp">
+
+        <shape android:shape="rectangle">
+            <solid android:color="@color/bg_tab_layout"/>
+            <corners android:radius="@dimen/dimen8dp" />
+
+        </shape>
+    </item>
+</layer-list>

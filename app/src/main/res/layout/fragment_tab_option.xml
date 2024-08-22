@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<TextView
+    android:id="@+id/qaz"
+    android:textSize="@dimen/text_size_40"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="MissingConstraints" />
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabOptionChose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
+        app:layout_constraintTop_toBottomOf="@+id/qaz"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPaperTabOption"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen100dp"
+        android:layout_marginTop="@dimen/dimen20dp"
+        android:background="#A3EC12"
+        app:layout_constraintTop_toBottomOf="@+id/tabOptionChose"
+        tools:ignore="MissingConstraints,NotSibling" />
+
+</LinearLayout>

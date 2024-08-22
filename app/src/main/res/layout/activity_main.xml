@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootViewMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:clickable="true"
+    android:focusable="true">
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/navMainHeader"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        tools:ignore="MissingConstraints">-->
+<!--        <androidx.appcompat.widget.AppCompatImageView-->
+<!--            android:id="@+id/ivStore"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/dimen30dp"-->
+<!--            android:layout_marginTop="@dimen/dimen30dp"-->
+<!--            android:src="@drawable/ic_store"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <androidx.appcompat.widget.AppCompatImageView-->
+<!--            android:id="@+id/ivGift"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@drawable/ic_gift"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/ivStore"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/edtSearch"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/ivStore"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/ivStore" />-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/llCoin"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="@dimen/dimen30dp"-->
+<!--            android:background="@drawable/bg_point_gradient_20"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/ivStore">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tvCoin"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginVertical="@dimen/dimen10dp"-->
+<!--                android:layout_marginStart="@dimen/dimen10dp"-->
+<!--                android:layout_marginEnd="@dimen/dimen5dp"-->
+<!--                android:text="999999999"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="@dimen/text_size_12" />-->
+
+<!--            <androidx.appcompat.widget.AppCompatImageView-->
+<!--                android:layout_width="@dimen/dimen20dp"-->
+<!--                android:layout_height="@dimen/dimen20dp"-->
+<!--                android:layout_gravity="end|center_vertical"-->
+<!--                android:layout_marginVertical="@dimen/dimen5dp"-->
+<!--                android:layout_marginEnd="@dimen/dimen10dp"-->
+<!--                android:src="@drawable/ic_coin" />-->
+<!--        </LinearLayout>-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/edtSearch"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/bg_search_corner_20"-->
+<!--            android:drawableEnd="@drawable/ic_search"-->
+<!--            android:drawablePadding="@dimen/dimen5dp"-->
+<!--            android:hint="Search"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:padding="@dimen/dimen10dp"-->
+<!--            android:textColorHint="@color/text_color_gray_7E7E7E"-->
+<!--            android:textSize="@dimen/text_size_14"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/llCoin"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/ivGift"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/ivStore" />-->
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+
+    <fragment
+        android:id="@+id/navigationHostFragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:defaultNavHost="true"
+        android:layout_marginBottom="-15dp"
+        app:layout_constraintBottom_toTopOf="@+id/viewBackgroundBottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/main_nav_graph" />
+
+    <View
+        android:id="@+id/viewShadow"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@id/viewBackgroundBottom"/>
+    <View
+        android:id="@+id/viewBackgroundBottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen0dp"
+        android:background="@drawable/bg_radius_bottom_navigation"
+        app:layout_constraintBottom_toBottomOf="@+id/frmBottom"
+        app:layout_constraintTop_toTopOf="@+id/frmBottom" />
+
+    <LinearLayout
+        android:id="@+id/frmBottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_bottom_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationViewMain"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen65dp"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:elevation="0dp"
+            android:layout_marginHorizontal="@dimen/dimen10dp"
+            app:itemBackground="@drawable/item_bottom_navigation_color_state"
+            android:minHeight="@dimen/dimen50dp"
+            app:elevation="0dp"
+            app:itemIconSize="@dimen/dimen24dp"
+            app:itemIconTint="@color/selector_bottom_navigation_icon"
+            app:itemRippleColor="@android:color/transparent"
+            app:itemTextColor="@color/selector_bottom_navigation_icon"
+            app:labelVisibilityMode="labeled"
+            app:itemTextAppearanceActive="@style/BottomNavigationView"
+            app:itemTextAppearanceInactive="@style/BottomNavigationView"
+            app:menu="@menu/menu_bottom_main" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

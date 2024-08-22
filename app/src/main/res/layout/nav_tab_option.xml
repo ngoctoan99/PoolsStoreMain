@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/lnl_filter_option"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/padding15"
+        tools:ignore="MissingConstraints">
+        <TextView
+            android:text="@string/title_tab_option_for_you"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_size_16"
+            android:textFontWeight="500"
+            android:paddingHorizontal="@dimen/padding5"
+            android:paddingVertical="@dimen/padding2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/tv_leaderboard"
+            android:layout_toLeftOf="@+id/tv_offer"
+            android:text="@string/title_tab_option_leaderboard"
+            android:textColor="@color/text_gray_500"
+            android:textSize="@dimen/text_size_12"
+            android:textFontWeight="400"
+            android:background="@drawable/bg_gray_corner_4"
+            android:paddingHorizontal="@dimen/padding10"
+            android:paddingVertical="@dimen/padding5"
+            android:layout_marginRight="@dimen/margin5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/tv_offer"
+            android:layout_toLeftOf="@+id/tv_category"
+            android:text="@string/title_tab_option_offer"
+            android:textColor="@color/text_gray_500"
+            android:textSize="@dimen/text_size_12"
+            android:textFontWeight="400"
+            android:background="@drawable/bg_gray_corner_4"
+            android:paddingHorizontal="@dimen/padding10"
+            android:paddingVertical="@dimen/padding5"
+            android:layout_marginRight="@dimen/margin5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/tv_category"
+            android:layout_alignParentRight="true"
+            android:text="@string/title_tab_option_category"
+            android:textColor="@color/text_gray_500"
+            android:textSize="@dimen/text_size_12"
+            android:textFontWeight="400"
+            android:background="@drawable/bg_gray_corner_4"
+            android:paddingHorizontal="@dimen/padding10"
+            android:paddingVertical="@dimen/padding5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTabOption"
+        app:layout_constraintTop_toBottomOf="@+id/lnl_filter_option"
+        android:layout_marginTop="@dimen/dimen10dp"
+        android:layout_marginHorizontal="@dimen/dimen15dp"
+        tools:listitem="@layout/item_row_game_normal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="horizontal"
+        tools:itemCount="3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="NotSibling" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

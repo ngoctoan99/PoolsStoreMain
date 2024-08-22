@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical"
+    android:id="@+id/cltNotification">
+
+    <RelativeLayout
+        android:id="@+id/rlTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivLeft"
+            android:visibility="gone"
+            android:layout_width="@dimen/dimen30dp"
+            android:layout_height="@dimen/dimen30dp"
+            android:layout_margin="@dimen/dimen15dp"
+            android:src="@drawable/ic_left"
+            android:tint="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Notification"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_16"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="@+id/ivLeft"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/ivLeft"
+            app:layout_constraintTop_toTopOf="@+id/ivLeft" />
+
+        <TextView
+            android:id="@+id/tvClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/dimen15dp"
+            android:textSize="@dimen/text_size_14"
+            android:textColor="@color/white"
+            android:text="Clear"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </RelativeLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_marginTop="@dimen/dimen10dp"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="@dimen/space_start_end"
+        android:layout_height="@dimen/dimen40dp"
+        app:tabIndicatorHeight="0dp"
+        android:background="@color/black"
+        app:tabPaddingStart="@dimen/dimen5dp"
+        app:tabPaddingEnd="@dimen/dimen5dp"
+        android:visibility="gone"
+        android:importantForAccessibility="no"
+        app:tabTextColor="@color/text_color_gray_B0B0B0"
+        app:tabSelectedTextColor="@color/white"
+        app:tabRippleColor="@android:color/transparent"
+        app:layout_constraintTop_toBottomOf="@+id/rlTop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tabBackground="@drawable/bg_tab_tablayout_import"
+        app:layout_constraintBottom_toTopOf="@id/viewPaperWallet"/>
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPaperWallet"
+        android:layout_marginHorizontal="@dimen/space_start_end"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/dimen10dp"
+        android:layout_height="match_parent"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+</androidx.constraintlayout.widget.ConstraintLayout>

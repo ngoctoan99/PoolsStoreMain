@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app"
+    app:startDestination="@id/appFragment">
+    <fragment
+        android:id="@+id/appFragment"
+        tools:layout="@layout/fragment_home"
+        android:name="com.pools.store.presentation.app.view.AppFragment"
+        android:label="fragment_home" >
+        <action android:id="@+id/action_game_to_group"
+            app:destination="@+id/groupFragment"/>
+        <action
+            android:id="@+id/action_homeFragment_to_detailGameFragment"
+            app:destination="@id/detailGameFragment" />
+        <action
+            android:id="@+id/action_seeMore_to_seeMoreFragment"
+            app:destination="@id/seeMoreFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_giftFragment"
+            app:destination="@id/giftFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+<!--   nav header-->
+    <fragment
+        android:id="@+id/searchFragment"
+        tools:layout="@layout/fragment_search"
+        android:name="com.pools.store.presentation.search.view.SearchFragment"
+        android:label="SearchFragment">
+        <action
+            android:id="@+id/action_searchFragment_to_detailGameFragment"
+            app:destination="@id/detailGameFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/giftFragment"
+        tools:layout="@layout/fragment_gift"
+        android:name="com.pools.store.presentation.gift.view.GiftFragment"
+        android:label="GiftFragment" />
+
+<!--    item by categoryId-->
+    <fragment
+        android:id="@+id/groupFragment"
+        tools:layout="@layout/fragment_favorite"
+        android:name="com.pools.store.presentation.group.view.GroupFragment"
+        android:label="GroupFragment" >
+        <argument
+            android:name="dataApp"
+            app:argType="com.pools.store.domain.model.CategoryDomain"
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_detailGameFragment"
+            app:destination="@id/detailGameFragment" />
+    </fragment>
+
+<!--    go to detail item-->
+    <fragment
+        android:id="@+id/detailGameFragment"
+        tools:layout="@layout/fragment_detail_game"
+        android:name="com.pools.store.presentation.detailGame.view.DetailGameFragment"
+        android:label="DetailGameFragment" >
+        <argument
+            android:name="dataApp"
+            app:argType="com.pools.store.domain.model.AppDomain"
+            />
+        <action
+            android:id="@+id/action_detailGameFragment_to_publisherNameFragment"
+            app:destination="@id/publisherNameFragment" />
+        <action
+            android:id="@+id/action_detailGameFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_detailGameFragment_to_detailGameFragment"
+            app:destination="@id/detailGameFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/publisherNameFragment"
+        tools:layout="@layout/fragment_publisher_name"
+        android:name="com.pools.store.presentation.publisher.view.PublisherNameFragment"
+        android:label="PublisherNameFragment">
+        <argument
+            android:name="publisherId"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_publishFragment_to_detailGameFragment"
+            app:destination="@id/detailGameFragment" />
+    </fragment>
+
+<!--    go to see more -->
+    <fragment
+        android:id="@+id/seeMoreFragment"
+        tools:layout="@layout/fragment_see_more"
+        android:name="com.pools.store.presentation.seemore.view.SeeMoreFragment"
+        android:label="SeeMoreFragment" >
+        <argument
+            android:name="keySeeMoreTitle"
+            app:argType="string"/>
+        <argument
+            android:name="keySeeMoreTag"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_homeFragment_to_detailGameFragment"
+            app:destination="@id/detailGameFragment" />
+    </fragment>
+
+</navigation>

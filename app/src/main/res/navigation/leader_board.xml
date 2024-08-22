@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/leader_board">
+    <fragment
+        android:id="@+id/leaderBoardFragment"
+        tools:layout="@layout/fragment_leader_board"
+        android:name="com.pools.store.presentation.tabOption.leaderboard.view.LeaderBoardFragment"
+        android:label="fragment_leader_board" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailGameFragment"
+            app:destination="@id/detailGameFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/detailGameFragment"
+        tools:layout="@layout/fragment_detail_game"
+        android:name="com.pools.store.presentation.detailGame.view.DetailGameFragment"
+        android:label="DetailGameFragment" >
+        <argument
+            android:name="dataApp"
+            app:argType="com.pools.store.domain.model.AppDomain"
+            />
+        <action
+            android:id="@+id/action_detailGameFragment_to_publisherNameFragment"
+            app:destination="@id/publisherNameFragment" />
+        <action
+            android:id="@+id/action_detailGameFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+
+    </fragment>
+
+</navigation>
+
+
+

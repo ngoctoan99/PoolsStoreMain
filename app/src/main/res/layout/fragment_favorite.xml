@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cltSearch"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/bg_color"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rltTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivLeft"
+            android:layout_width="@dimen/dimen30dp"
+            android:layout_height="@dimen/dimen30dp"
+            android:layout_margin="@dimen/dimen15dp"
+            android:src="@drawable/ic_left"
+            android:tint="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/title_favorite"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_16"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/ivLeft"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/ivLeft"
+            app:layout_constraintTop_toTopOf="@+id/ivLeft" />
+    </RelativeLayout>
+
+    <EditText
+        android:visibility="gone"
+        android:id="@+id/edtSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_search_corner_20"
+        android:drawableEnd="@drawable/ic_search"
+        android:drawablePadding="@dimen/dimen5dp"
+        android:layout_marginHorizontal="@dimen/dimen15dp"
+        android:layout_marginVertical="@dimen/dimen10dp"
+        android:hint="Search"
+        android:textColor="@color/white"
+        android:padding="@dimen/dimen15dp"
+        android:textColorHint="@color/text_color_gray_7E7E7E"
+        android:textSize="@dimen/text_size_14"
+        app:layout_constraintTop_toBottomOf="@+id/rltTop"/>
+    <androidx.recyclerview.widget.RecyclerView
+        app:layout_constraintTop_toBottomOf="@+id/edtSearch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/viewBottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="@dimen/dimen15dp"
+        android:layout_marginVertical="@dimen/dimen10dp"
+        android:id="@+id/rvFavorite"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        tools:listitem="@layout/item_app_store"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constrainedHeight="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <TextView
+        android:id="@+id/tvNoDataFavorites"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="No Data"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:visibility="gone"
+        android:textSize="@dimen/text_size_20"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <View
+        android:id="@+id/viewBottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen10dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

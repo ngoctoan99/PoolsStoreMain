@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <application>
+
+        <receiver android:name=".MyBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.playground.broadcast.dashboard" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+    <queries>
+        <package android:name="com.pools.dashboard"/>
+        <package android:name="com.wallet.pools"/>
+        <package android:name="com.pools.lottery"/>
+        <package android:name="com.pools.vote"/>
+        <package android:name="com.pools.slide"/>
+        <package android:name="com.pools.keyboard"/>
+        <package android:name="com.pools.walk"/>
+        <package android:name="com.pools.dex"/>
+        <package android:name="com.pools.call"/>
+        <package android:name="friendify.playground"/>
+
+    </queries>
+
+
+</manifest>

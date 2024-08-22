@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.tabOption.offerApp.view.OfferAppFragment"
+    tools:ignore="MissingDefaultResource">
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/rvOffer"
+           android:layout_marginTop="@dimen/dimen10dp"
+           android:layout_marginHorizontal="@dimen/dimen15dp"
+           tools:listitem="@layout/item_app_store"
+           app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+           android:orientation="horizontal"
+           tools:itemCount="3"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           tools:ignore="MissingConstraints" />
+
+
+       <!--host discount-->
+       <LinearLayout
+           android:id="@+id/llnHostDiscount"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintTop_toBottomOf="@id/rvOffer"
+           tools:ignore="MissingConstraints">
+
+           <RelativeLayout
+               android:id="@+id/rllHostDiscount"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="@dimen/text_size_10"
+               android:paddingHorizontal="@dimen/text_size_16"
+               tools:ignore="MissingConstraints">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_alignParentStart="true"
+                   android:text="@string/title_host_discount"
+                   android:textColor="@color/text_white"
+                   android:textSize="@dimen/text_size_16" />
+
+               <TextView
+                   android:id="@+id/tvSeeMoreHostDiscount"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_alignParentEnd="true"
+                   android:drawableEnd="@drawable/ic_right"
+                   android:gravity="center"
+                   android:text="@string/title_see_more"
+                   android:textColor="@color/text_gray_400"
+                   android:textSize="@dimen/text_size_14"
+                   android:visibility="gone" />
+           </RelativeLayout>
+
+           <androidx.recyclerview.widget.RecyclerView
+               android:id="@+id/rvHostDiscount"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginHorizontal="@dimen/dimen15dp"
+               android:layout_marginTop="@dimen/dimen10dp"
+               android:orientation="horizontal"
+               android:visibility="gone"
+               app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+               app:layout_constraintTop_toBottomOf="@+id/rllHostDiscount"
+               tools:itemCount="3"
+               tools:listitem="@layout/item_app_store" />
+
+           <TextView
+               android:id="@+id/tvNoDataHostDiscount"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginHorizontal="@dimen/dimen15dp"
+               android:gravity="center"
+               android:paddingVertical="@dimen/dimen10dp"
+               android:text="@string/title_no_data"
+               android:textColor="@color/text_white"
+               app:layout_constraintTop_toBottomOf="@+id/rllHostDiscount" />
+       </LinearLayout>
+
+       <!--  recommend-->
+       <LinearLayout
+           android:id="@+id/lnnRecommend"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintTop_toBottomOf="@id/llnHostDiscount"
+           tools:ignore="MissingConstraints">
+
+           <RelativeLayout
+               android:id="@+id/rllNewGame"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="@dimen/text_size_10"
+               android:paddingHorizontal="@dimen/text_size_16"
+               tools:ignore="MissingConstraints">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_alignParentStart="true"
+                   android:text="@string/title_recommend"
+                   android:textColor="@color/text_white"
+                   android:textSize="@dimen/text_size_16" />
+
+               <TextView
+                   android:id="@+id/tvSeeMoreRecommend"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_alignParentEnd="true"
+                   android:drawableEnd="@drawable/ic_right"
+                   android:gravity="center"
+                   android:text="@string/title_see_more"
+                   android:textColor="@color/text_gray_400"
+                   android:textSize="@dimen/text_size_14"
+                   android:visibility="gone" />
+           </RelativeLayout>
+
+           <androidx.recyclerview.widget.RecyclerView
+               android:id="@+id/rvRecommend"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginHorizontal="@dimen/dimen15dp"
+               android:layout_marginTop="@dimen/dimen10dp"
+               android:orientation="horizontal"
+               android:visibility="gone"
+               app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+               tools:itemCount="3"
+               tools:listitem="@layout/item_app_store" />
+
+           <TextView
+               android:id="@+id/tvNoDataRecommend"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginHorizontal="@dimen/dimen15dp"
+               android:gravity="center"
+               android:paddingVertical="@dimen/dimen10dp"
+               android:text="@string/title_no_data"
+               android:textColor="@color/text_white" />
+       </LinearLayout>
+
+       <!--        No internet-->
+       <LinearLayout
+           android:id="@+id/lnnNoInternet"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintTop_toBottomOf="@id/lnnRecommend"
+           app:layout_constraintBottom_toTopOf="@+id/viewBottom"
+           tools:ignore="MissingConstraints">
+
+           <RelativeLayout
+               android:id="@+id/rllPlayToEarn"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="@dimen/text_size_10"
+               android:paddingHorizontal="@dimen/text_size_16"
+               tools:ignore="MissingConstraints">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_alignParentStart="true"
+                   android:text="@string/title_no_internet"
+                   android:textColor="@color/text_white"
+                   android:textSize="@dimen/text_size_16" />
+
+               <TextView
+                   android:id="@+id/tvSeeMoreNoInternet"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_alignParentEnd="true"
+                   android:drawableEnd="@drawable/ic_right"
+                   android:gravity="center"
+                   android:text="@string/title_see_more"
+                   android:textColor="@color/text_gray_400"
+                   android:textSize="@dimen/text_size_14"
+                   android:visibility="gone" />
+           </RelativeLayout>
+
+           <androidx.recyclerview.widget.RecyclerView
+               android:id="@+id/rvNoInternet"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginHorizontal="@dimen/dimen15dp"
+               android:layout_marginTop="@dimen/dimen10dp"
+               android:orientation="horizontal"
+               android:visibility="gone"
+               tools:itemCount="3"
+               tools:listitem="@layout/item_app_store" />
+
+           <TextView
+               android:id="@+id/tvNoDataNoInternet"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginHorizontal="@dimen/dimen15dp"
+               android:gravity="center"
+               android:paddingVertical="@dimen/dimen10dp"
+               android:text="@string/title_no_data"
+               android:textColor="@color/text_white" />
+       </LinearLayout>
+
+       <View
+           android:id="@+id/viewBottom"
+           android:layout_width="match_parent"
+           android:layout_height="@dimen/dimen15dp"
+           app:layout_constraintBottom_toBottomOf="parent"/>
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

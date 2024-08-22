@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/noti"
+    app:startDestination="@id/notiFragment">
+    <fragment
+        android:id="@+id/notiFragment"
+        tools:layout="@layout/fragment_noti_system"
+        android:name="com.pools.store.presentation.noti.tabLayout.view.SystemNotiChildTabFragment"
+        android:label="fragment_noti_system" >
+    </fragment>
+</navigation>
